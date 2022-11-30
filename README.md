@@ -82,7 +82,7 @@ https://academy.especializati.com.br/curso/laravel-9-gratuito
 
 ## <a name="parte5">5 - 04 - Instalando o Laravel 9 (feat. Docker)</a>
 
-
+- https://github.com/especializati/curso-laravel-9
 
 [Voltar ao Índice](#indice)
 
