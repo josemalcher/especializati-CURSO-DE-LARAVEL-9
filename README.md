@@ -190,7 +190,13 @@ https://academy.especializati.com.br/curso/laravel-9-gratuito
 
 ## <a name="parte17">17 - 15 - Validar Dados do Formulário com o Laravel (com Form Request)</a>
 
+``` 
+$ php artisan make:request StoreUpdateUserFormRequest
 
+   INFO  Request [C:\Users\josem\Documents\workspaces\especializati-CURSO-DE-LARAVEL-9\projaula1\app/Http/Requests/StoreUpdateUserFormRequest.php] created successfully.
+
+
+```
 
 [Voltar ao Índice](#indice)
 
