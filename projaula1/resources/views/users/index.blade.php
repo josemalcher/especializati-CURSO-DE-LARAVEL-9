@@ -3,7 +3,7 @@
 @section('title', 'Listagem dos Usuários')
 
 @section('content')
-<h1>Users</h1>
+<h1>Users <a href="{{route('users.create')}}">[+]</a></h1>
 <hr>
 
 <ul>
