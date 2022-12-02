@@ -3,13 +3,15 @@
 @section('title', 'Listagem dos Usuários')
 
 @section('content')
-<h1>Users <a href="{{route('users.create')}}">[+]</a></h1>
-<hr>
+    <h1>Users <a href="{{route('users.create')}}">[+]</a></h1>
+    <hr>
 
-<ul>
-    @foreach($users as $user)
-        <li>{{$user->name}} - {{$user->email}} | <a href="{{route('users.show', $user->id)}}">Detalhes</a></li>
+    <ul>
+        @foreach($users as $user)
+            <li>{{$user->name}} - {{$user->email}} |
+                <a href="{{route('users.show', $user->id)}}">Detalhes</a> |
+                <a href="{{route('users.edit', $user->id)}}">Editar</a></li>
 
-    @endforeach
-</ul>
+        @endforeach
+    </ul>
 @endsection
