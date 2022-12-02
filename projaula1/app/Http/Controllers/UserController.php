@@ -33,9 +33,15 @@ class UserController extends Controller
         return view('users.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        dd('Cadastrando usuário');
+        $data = $request->all();
+        $data['password'] = bcrypt($request->password);
+
+        $user = User::create($data);
+
+        return redirect()->route('users.show', $user);
+        //return redirect()->route('users.index');
     }
 
 }
