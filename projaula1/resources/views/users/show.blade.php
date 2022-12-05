@@ -8,4 +8,11 @@
     <li>{{$user->name}}</li>
     <li>{{$user->email}}</li>
 </ul>
+
+<hr>
+<form action="{{route('users.destroy', $user->id)}}" method="POST">
+    @method('DELETE')
+    @csrf
+    <button type="submit">DELETAR</button>
+</form>
 @endsection
