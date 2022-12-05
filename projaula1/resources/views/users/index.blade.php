@@ -5,7 +5,11 @@
 @section('content')
     <h1>Users <a href="{{route('users.create')}}">[+]</a></h1>
     <hr>
-
+    <form action="{{route('users.index')}}" method="get">
+        <input type="text" name="search" placeholder="Pesquisar">
+        <button>Pesquisar</button>
+    </form>
+    <hr>
     <ul>
         @foreach($users as $user)
             <li>{{$user->name}} - {{$user->email}} |

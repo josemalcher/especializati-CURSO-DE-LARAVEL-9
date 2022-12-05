@@ -8,9 +8,19 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::get();
+
+        $search = $request->search;
+
+        $users = User::where(function ($query) use ($search){
+            if ($search) {
+                $query->where('email', $search);
+                $query->orWhere('name', 'LIKE', "%{$search}%");
+            }
+        })->get();
+
+        //$users = User::get();
 
         // dd($users);
 
@@ -41,8 +51,8 @@ class UserController extends Controller
 
         $user = User::create($data);
 
-        return redirect()->route('users.show', $user);
-        //return redirect()->route('users.index');
+        //return redirect()->route('users.show', $user);
+        return redirect()->route('users.index');
     }
 
     public function edit($id)
