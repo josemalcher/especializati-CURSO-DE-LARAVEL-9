@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\{UserController, Admin\CommentController};
 
 /*
 |--------------------------------------------------------------------------
@@ -32,4 +32,6 @@ Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update
 
 Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
 
-Route::get('users/{id}/comments', [\App\Http\Controllers\Admin\CommentController::class, 'index'])->name('comments.index');
+Route::get('users/{id}/comments', [CommentController::class, 'index'])->name('comments.index');
+Route::get('users/{id}/comments/create', [CommentController::class, 'create'])->name('comments.create');
+Route::post('users/{id}/comments', [CommentController::class, 'store'])->name('comments.store');
