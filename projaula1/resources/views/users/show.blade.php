@@ -3,16 +3,16 @@
 @section('title', "Dados do Usuário $user->name")
 
 @section('content')
-<h1>Dadoso do usuário {{$user->name}}</h1>
-<ul>
-    <li>{{$user->name}}</li>
-    <li>{{$user->email}}</li>
-</ul>
+    <h1 class="text-2xl font-semibold leading-tigh py-2">Listagem do usuário {{ $user->name }}</h1>
 
-<hr>
-<form action="{{route('users.destroy', $user->id)}}" method="POST">
-    @method('DELETE')
-    @csrf
-    <button type="submit">DELETAR</button>
-</form>
+    <ul>
+        <li>{{ $user->name }}</li>
+        <li>{{ $user->email }}</li>
+    </ul>
+
+    <form action="{{ route('users.destroy', $user->id) }}" method="POST" class="py-12">
+        @method('DELETE')
+        @csrf
+        <button type="submit" class="rounded-full bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4">Deletar</button>
+    </form>
 @endsection
