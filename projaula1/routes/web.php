@@ -32,3 +32,4 @@ Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update
 
 Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
 
+Route::get('users/{id}/comments', [\App\Http\Controllers\Admin\CommentController::class, 'index'])->name('comments.index');
