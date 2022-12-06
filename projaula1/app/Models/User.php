@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -44,7 +45,7 @@ class User extends Authenticatable
 
     public function getUsers(string|null $search = null)
     {
-        $users = $this->where(function ($query) use ($search){
+        $users = $this->where(function ($query) use ($search) {
             if ($search) {
                 $query->where('email', $search);
                 $query->orWhere('name', 'LIKE', "%{$search}%");
@@ -52,4 +53,10 @@ class User extends Authenticatable
         })->get();
         return $users;
     }
+
+    public function Coments()
+    {
+        return $this->hasMany(Coment::class);
+    }
+
 }
