@@ -9,12 +9,12 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
-    protected $model;
+    protected $coment;
     protected $user;
 
     public function __construct(Coment $coment, User $user)
     {
-        $this->model = $coment;
+        $this->coment = $coment;
         $this->user = $user;
     }
 
@@ -41,14 +41,35 @@ class CommentController extends Controller
             return redirect()->back();
         }
         // dd($request->all());
-
         $user->comments()->create([
             'body' => $request->body,
             'visible' => isset($request->visible)
         ]);
-
-
         return redirect()->route('comments.index', $user->id);
+    }
+
+    public function edit($userId, $id)
+    {
+        if (!$comment = $this->coment->find($id)) {
+            return redirect()->back();
+        }
+
+        $user = $comment->user;
+        return view('users.comments.edit', compact('user', 'comment'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        if (!$comment = $this->coment->find($id)) {
+            return redirect()->back();
+        }
+
+        $comment->update([
+            'body' => $request->body,
+            'visible' => isset($request->visible)
+        ]);
+
+        return redirect()->route('comments.index', $comment->user_id);
     }
 
 }
