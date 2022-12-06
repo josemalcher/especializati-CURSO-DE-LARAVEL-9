@@ -116,6 +116,7 @@
       <excludeFolder url="file://$MODULE_DIR$/projaula1/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/projaula1/vendor/hamcrest/hamcrest-php" />
       <excludeFolder url="file://$MODULE_DIR$/projaula1/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/projaula1/vendor/laravel/breeze" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

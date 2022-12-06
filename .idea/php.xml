@@ -110,6 +110,7 @@
       <path value="$PROJECT_DIR$/projaula1/vendor/voku/portable-ascii" />
       <path value="$PROJECT_DIR$/projaula1/vendor/hamcrest/hamcrest-php" />
       <path value="$PROJECT_DIR$/projaula1/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/projaula1/vendor/laravel/breeze" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />

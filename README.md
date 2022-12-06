@@ -358,7 +358,7 @@ $ php artisan make:request StoreUpdateUserFormRequest
 
 ## <a name="parte35">35 - 31 - Autenticação / Registro / Recupear Senha no Laravel</a>
 
-
+- https://mailtrap.io/
 
 [Voltar ao Índice](#indice)
 
